@@ -135,7 +135,7 @@ def send_task_email(sender, instance, **kwargs):
 
     d = Context({ 'candidate': instance.candidate.name, 'evaluationdate': instance.evaluationdate, 'phone': instance.candidate.phone1 })
 
-    subject, from_email, to = 'GEIQ English Evaluation', "myklmex@gmail.com", 'mykljohn@hotmail.com'
+    subject, from_email, to = 'Evaluation', "myklmex@gmail.com", 'mykljohn@hotmail.com'
     text_content = plaintext.render(d)
     html_content = htmly.render(d)
     msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
