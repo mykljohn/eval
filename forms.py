@@ -48,26 +48,11 @@ class Evaluationfrm(forms.ModelForm):
     levelobtained = forms.CharField(widget=forms.RadioSelect(choices=Evaluation.xLEVEL), required=False, label="Level Obtained")
     passfail = forms.CharField(widget=forms.RadioSelect(choices=Evaluation.xPASSFAIL), required=False, label="Pass / Fail")
     source = forms.CharField(widget=forms.RadioSelect(choices=Evaluation.xSOURCE), required=False, )
-    business = forms.CharField(widget=forms.Select(choices=Evaluation.xBUSINESS), required=False, )
-    position = forms.CharField(widget=forms.Select(choices=Evaluation.xPOSITON), required=False, )
-    band = forms.CharField(widget=forms.RadioSelect(choices=Evaluation.xBAND), required=False, )
     user = forms.ModelChoiceField(queryset=Evaluator.objects.filter(maxevals__gt=0), required=False, empty_label="Unassigned")
 
     class Meta:
         model = Evaluation
-        fields = ('evaluationdate', 'user', 'status', 'bankno', 'requestedby', 'levelrequired', 'levelobtained', 'passfail', 'source', 'business', 'hiremanager', 'position', 'band', 'costcenter',)
-
-
-class EvaluationHRfrm(forms.ModelForm):
-
-    source = forms.CharField(widget=forms.RadioSelect(choices=EvaluationHR.xSOURCE), required=False, )
-    business = forms.CharField(widget=forms.Select(choices=EvaluationHR.xBUSINESS), required=False, )
-    position = forms.CharField(widget=forms.Select(choices=EvaluationHR.xPOSITON), required=False, )
-    band = forms.CharField(widget=forms.RadioSelect(choices=EvaluationHR.xBAND), required=False, )
-
-    class Meta:
-        model = EvaluationHR
-        fields = ('source', 'business', 'hiremanager', 'position', 'band', 'costcenter',)
+        fields = ('evaluationdate', 'user', 'status', 'bankno', 'requestedby', 'levelrequired', 'levelobtained', 'passfail', 'source',)
 
 
 class ScoreMsgChoiceField(ModelMultipleChoiceField):
@@ -91,10 +76,5 @@ class EvaluationScorefrm(forms.ModelForm):
         fields = '__all__'
         model = EvaluationScore
 
-
-class CategoryAdminForm(forms.ModelForm):
-    class Meta:
-        fields = '__all__'
-        model = EvalGrp
 
 
