@@ -10,9 +10,9 @@ from django.contrib.auth.models import User, Group
 
 from django.db import models
 from django.forms import TextInput, Textarea
-from .models import Evaluator, Candidate, Question, EvalGrp, ScoreMsg, Evaluation, EvaluationHR, EvaluationScore, EvaluationComment, Response
+from .models import Evaluator, Candidate, Question, EvalGrp, ScoreMsg, Evaluation, EvaluationScore, EvaluationComment, Response
 
-from .forms import Candidatefrm, Evaluatorfrm, Evaluationfrm, EvaluationHRfrm, EvaluationScorefrm
+from .forms import Candidatefrm, Evaluatorfrm, Evaluationfrm, EvaluationScorefrm
 
 from django.utils.safestring import mark_safe
 #from categories.admin import CategoryBaseAdmin
