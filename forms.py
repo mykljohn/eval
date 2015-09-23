@@ -7,7 +7,7 @@ from itertools import groupby
 from operator import attrgetter
 
 
-from .models import Evaluator, Candidate, Question, EvalGrp, ScoreMsg, Evaluation, EvaluationHR, EvaluationScore, EvaluationComment, Response
+from .models import Evaluator, Candidate, Question, EvalGrp, ScoreMsg, Evaluation, EvaluationScore, EvaluationComment, Response
 
 
 class Evaluatorfrm(forms.ModelForm):
